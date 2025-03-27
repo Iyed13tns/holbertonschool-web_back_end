@@ -3,8 +3,9 @@ export default function taskBlock(trueOrFalse) {
     const task2 = true;
 
     if (trueOrFalse) {
-        const task = true;
-        const task2 = false;
+        // Using block-scoped variables to avoid redeclaration issues
+        let task = true; // This is scoped to the if block
+        let task2 = false; // This is scoped to the if block
     }
 
     return [task, task2];
