@@ -1,22 +1,20 @@
-module.exports = {
-    env: {
-      browser: false,
-      es6: true,
-      jest: true,
-    },
-    extends: [
-      'airbnb-base',
-      'plugin:jest/all',
-    ],
-    globals: {
-      Atomics: 'readonly',
-      SharedArrayBuffer: 'readonly',
-    },
-    parserOptions: {
+import globals from 'globals';
+
+export default [
+  {
+    files: ['*.js'],
+    languageOptions: {
+      globals: {
+        ...globals.node,
+        Atomics: 'readonly',
+        SharedArrayBuffer: 'readonly',
+      },
       ecmaVersion: 2018,
       sourceType: 'module',
     },
-    plugins: ['jest'],
+    plugins: {
+      jest: require('eslint-plugin-jest'),
+    },
     rules: {
       'max-classes-per-file': 'off',
       'no-underscore-dangle': 'off',
@@ -28,10 +26,5 @@ module.exports = {
         'WithStatement',
       ],
     },
-    overrides:[
-      {
-        files: ['*.js'],
-        excludedFiles: 'babel.config.js',
-      }
-    ]
-  };
+  },
+];
