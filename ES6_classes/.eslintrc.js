@@ -24,7 +24,7 @@ module.exports = {
       'no-shadow': 'off',
       'no-restricted-syntax': [
         'error',
-       LabeledStatement',
+        'LabeledStatement',
         'WithStatement',
       ],
     },
