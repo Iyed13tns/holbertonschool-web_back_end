@@ -51,4 +51,3 @@ export class HolbertonClass {
   ];
   
   export default listOfStudents;
-  
