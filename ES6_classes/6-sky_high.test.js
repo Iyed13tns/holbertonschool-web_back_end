@@ -27,3 +27,15 @@ describe('SkyHighBuilding', () => {
     expect(() => new SkyHighBuilding(1000)).toThrow();
   });
 });
+test('should inherit from Building and have access to sqft', () => {
+  const building = new SkyHighBuilding(2500, 15);
+  expect(building instanceof SkyHighBuilding).toBe(true);
+  expect(building instanceof Building).toBe(true);
+  expect(building.sqft).toBe(2500);
+});
+
+test('should throw an error if floors is not a number', () => {
+  expect(() => new SkyHighBuilding(2000, 'ten')).toThrow();
+  expect(() => new SkyHighBuilding(2000, null)).toThrow();
+  expect(() => new SkyHighBuilding(2000, undefined)).toThrow();
+});
