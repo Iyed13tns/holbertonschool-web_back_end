@@ -1,12 +1,4 @@
-export default class Building {
-  constructor(sqft) {
-    this._sqft = sqft;
-  }
-
-  get sqft() {
-    return this._sqft;
-  }
-}
+import Building from './5-building.js';
 
 export default class SkyHighBuilding extends Building {
   constructor(sqft, floors) {
